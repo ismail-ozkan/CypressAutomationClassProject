@@ -21,4 +21,19 @@ describe('Context: My First Tests with Cypress', () => {
     it('Opening a tab in the web application with BaseUrl', () => {
         cy.visit('/registration_form');
     })
+    it.skip('Test 2', ()=> {
+        expect(false).to.equal(false);
+    })
+    xit('Test 3', ()=> {
+        expect(false).not.to.equal(true);
+    })
+    //it.only('Test 4', ()=> {
+    //    expect(5).to.equal(5);
+    //})
+    it('Test 5', ()=> {
+        expect(true).to.equal('5'==5);
+    })
+    it('Test 5', ()=> {
+        expect(true).to.equal('5'===5);
+    })
 })
