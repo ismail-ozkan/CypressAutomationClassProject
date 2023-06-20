@@ -1,3 +1,5 @@
+/// <reference types="cypress" />
+
 describe('Find or Get Elements by Using Different Locators', () => {
     beforeEach(() => {
         // runs before each test cases(it), like @beforeMethod in TestNG
