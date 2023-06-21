@@ -58,5 +58,6 @@ describe("Context: Multiple Button Actions", () => {
     })
   });
 
+  // npx cypress run --headless -b chrome
 
 });
