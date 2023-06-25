@@ -1,0 +1,8 @@
+If I assign a bug to developer, I always make sure that it's a real bug so I mean I check that if the requirements are clear and I understand it clearly and also I ask for my colleague to review it. For doing that I use a way that I ask for my colleague to review it.
+After developer denied the bug, I would show him/her my point of view to explain why I'm thinking it's a bug, than ask show me your point of view, I try to understand his thinking about the bug
+If conflict continue then I ask for PO to clarify the story and wait the response.
+
+How do you run your regression? (3 min)
+First of all I'm using java and bdd cucumber framework, maven also as a build automation tool. Jenkins is my CI-CD tool.
+
+I run my regression suit via Jenkins by using AWS server.
