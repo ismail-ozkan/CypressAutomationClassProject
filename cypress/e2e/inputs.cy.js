@@ -6,11 +6,11 @@ describe('Input Forms Tests', () => {
     cy.visit('/registration_form');
   });
 
-  it.skip('Opening a web application', () => {
+  it('Opening a web application', () => {
     // cy.visit('https://practice.cydeo.com');
     // cy.get('.list-group > :nth-child(1) > table').click();
   });
-  it.skip('Check different input box fields and verify', () => {
+  it('Check different input box fields and verify', () => {
     // fill the form for username
     cy.get('input[name="firstname"]').type('Mike');
     cy.get('input[name="lastname"]').type('Brown');
@@ -28,7 +28,7 @@ describe('Input Forms Tests', () => {
     cy.get('input[name="birthday"]').type('01/01/1991');
   });
 
-  it.skip('Check different radio button actions', () => {
+  it('Check different radio button actions', () => {
     cy.get('.radio')
       .find('[type=radio]')
       .then((radio) => {

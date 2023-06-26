@@ -9,7 +9,7 @@ describe('Cypress Web Table Tests', { baseUrl: 'https://demoqa.com' }, () => {
     cy.visit('/webtables');
   });
 
-  xit('Check finding and editing a record', () => {
+  it('Check finding and editing a record', () => {
     // locate table body then navigate through this element to find
     // Alden, then update info with another person
     cy.get('.rt-tbody') // get me table body
@@ -29,7 +29,7 @@ describe('Cypress Web Table Tests', { baseUrl: 'https://demoqa.com' }, () => {
         cy.wrap(row).find('.rt-td').eq(3).should('contain', 'ismailozcn@gmail.com');
       });
   });
-  xit('Check finding and deleting a record', () => {
+  it('Check finding and deleting a record', () => {
     cy.get('.rt-tbody') // get me table body
       .contains('.rt-tr-group', 'Alden') // get me the row that contains Alden
       .then((row) => {
@@ -44,7 +44,7 @@ describe('Cypress Web Table Tests', { baseUrl: 'https://demoqa.com' }, () => {
     // No row found message is visible
     cy.get('.rt-noData').should('be.visible').should('contain', 'No rows found');
   });
-  xit('Check search for different age records', () => {
+  it('Check search for different age records', () => {
     // define age groups
     const ageGroup = [29, 39, 45, 77];
     // for each age group perform same test scenario
@@ -64,7 +64,7 @@ describe('Cypress Web Table Tests', { baseUrl: 'https://demoqa.com' }, () => {
       }
     });
   });
-  xit('Check search for different age records', () => {
+  it('Check search for different age records', () => {
     // define age groups
     const ageGroup = [29, 39, 45, 77];
     // for each age group perform same test scenario
@@ -84,8 +84,8 @@ describe('Cypress Web Table Tests', { baseUrl: 'https://demoqa.com' }, () => {
       }
     });
   });
-  xit('Check adding a new record - Bad code practice', () => {
-    //click on add button
+  it('Check adding a new record - Bad code practice', () => {
+    // click on add button
     cy.get('#addNewRecordButton').click();
     cy.get('#firstName').type('Harvey');
     cy.get('#lastName').type('Kandy');
@@ -105,27 +105,27 @@ describe('Cypress Web Table Tests', { baseUrl: 'https://demoqa.com' }, () => {
         cy.wrap(row).find('.rt-td').eq(4).should('contain', '70000');
         cy.wrap(row).find('.rt-td').eq(5).should('contain', 'Legal');
       });
-    });
+  });
   it('Check adding a new record - Better approach', () => {
-    //click on add button
+    // click on add button
     cy.get('#addNewRecordButton').click();
     cy.fixture('users').then((users) => {
       const columnNames = Object.keys(users.user1); // goes to fixture folder, gets users file and
       // get user1 object keys and store into columnNames array
       const userData = Object.values(users.user1);
       cy.wrap(columnNames).each((columnName, index) => {
-        //cy.log(columnName);
-        //cy.log(userData[index]);
+        // cy.log(columnName);
+        // cy.log(userData[index]);
         cy.get(`#${columnName}`).type(userData[index]);
-      })
+      });
       cy.get('#submit').click();
       cy.get('.rt-tbody') // get me table body
-      .contains('.rt-tr-group', userData[0]) // get me the row that contains user firstName
-      .then((row) => {
-        cy.wrap(userData).each((value, index) => {
-          cy.wrap(row).find('.rt-td').eq(index).should('contain',value);
-        })
-      });
-    })
-  })
+        .contains('.rt-tr-group', userData[0]) // get me the row that contains user firstName
+        .then((row) => {
+          cy.wrap(userData).each((value, index) => {
+            cy.wrap(row).find('.rt-td').eq(index).should('contain', value);
+          });
+        });
+    });
+  });
 });
