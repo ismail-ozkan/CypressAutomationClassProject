@@ -4,7 +4,7 @@ module.exports = defineConfig({
   e2e: {
     baseUrl: 'https://practice.cydeo.com/',
     video: false,
-    retries: 1,
+    retries: 0,
     defaultCommandTimeout: 4000,
     viewportHeight: 1000,
     viewportWidth: 800,
