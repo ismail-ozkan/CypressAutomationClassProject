@@ -69,7 +69,7 @@ cy.wrap(radio): Bu satır, radio parametresini bir Cypress nesnesine sarmalar. B
     });
   });
   it('Check selection of a single choise from dropdown', () => {
-    //select one element
+    // select one element
     cy.get('select[name="job_title"]').select('SDET');
     // assert that dropdown has correct text after selecting
     cy.get('select[name="job_title"]').contains('SDET');
@@ -82,9 +82,9 @@ cy.wrap(radio): Bu satır, radio parametresini bir Cypress nesnesine sarmalar. B
       cy.get('select[name="department"] > option').each((option, index) => {
         // get each option text
         const optionText = option.text();
-        //cy.log(optionText);
-        //cy.log(index);
-        //cy.log(departments[index]);
+        // cy.log(optionText);
+        // cy.log(index);
+        // cy.log(departments[index]);
         cy.get('select[name="department"]')
           .select(optionText)
           .should('have.value', option.val())
