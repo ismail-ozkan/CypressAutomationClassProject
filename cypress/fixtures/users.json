@@ -8,11 +8,7 @@
         "department": "IT"
       },
       "user2": {
-        "firstName": "Bob",
-        "lastName": "Johnson",
-        "age": 32,
-        "userEmail": "bob@example.com",
-        "salary": 65000,
-        "department": "Sales"
+        "username": "tomsmith",
+        "password": "SuperSecretPassword"
       }
     }
